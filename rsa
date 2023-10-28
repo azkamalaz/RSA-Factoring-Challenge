@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 
-
-from fractions import gcd
+from math import gcd
 from sys import argv
 
 
@@ -9,7 +8,9 @@ def pollards_rho(n):
     x = 2
     y = 2
     d = 1
-    f = lambda x: (x**2 + 1) % n
+
+    def f(x):
+        return (x**2 + 1) % n
     while d == 1:
         x = f(x)
         y = f(f(y))
